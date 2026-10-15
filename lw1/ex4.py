@@ -16,12 +16,12 @@ def _new_s0(b):
     return b[0][0][-1]^b[1][0][-1]^b[2][0][-1]
 
 def bit_generator(length, d, m_i):
-    result = []
+    result = ''
     for _ in range(length):
         m = _majority(d=d, m_i=m_i)
 
         s = _new_s0(list(d.values()))
-        result.append(s)
+        result += str(s)
 
         for k in d:
             if d[k][0][m_i[k]] == m:
@@ -42,7 +42,7 @@ x = [int(i) for i in x]
 y = [int(i) for i in y]
 z = [int(i) for i in z]
 
-print(len(x), len(y), len(z), '=', len(x+y+z) == 64)
+# print(len(x), len(y), len(z), '=', len(x+y+z) == 64)
 
 x_id = [13, 16, 17, 18]
 y_id = [20, 21]
